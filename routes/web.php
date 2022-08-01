@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//dasboard
+//add dasboard 
 Route::get('/dash', function () {
     return view('Dashboard.dashboard');
 });
