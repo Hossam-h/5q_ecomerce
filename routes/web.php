@@ -21,3 +21,8 @@ Route::get('/', function () {
 Route::get('/dash', function () {
     return view('Dashboard.dashboard');
 });
+
+//auth dev
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
