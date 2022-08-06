@@ -21,18 +21,23 @@
                     </div>
                     <div class="topbar-menu right-menu">
                         <ul>
-                        @if(!Auth::user())
-                            <li class="menu-item"><a title="Register or Login" href="{{route('login')}}">Login</a></li>
-                            <li class="menu-item"><a title="Register or Login" href="{{route('register')}}">Register</a>
+                            <li class="menu-item"><a title="Register or Login"
+                                    href="{{url('/dashboar_admin')}}">{{__('dashboard.dashboard')}}</a></li>
+
+                            @if(!Auth::user())
+                            <li class="menu-item"><a title="Register or Login"
+                                    href="{{route('login')}}">{{__('login.login')}}</a></li>
+                            <li class="menu-item"><a title="Register or Login"
+                                    href="{{route('register')}}">{{__('login.register')}}</a>
                             </li>
                             @endif
                             @if(Auth::user())
-                            
+
                             <li class="menu-item">
 
                                 <a class="dropdown-item" href="http://127.0.0.1:8000/logout" onclick="event.preventDefault();
 				   document.getElementById('logout-form').submit();">
-                                    Logout
+                                    {{__('login.logout')}}
                                 </a>
 
                                 <form id="logout-form" action="http://127.0.0.1:8000/logout" method="POST"
@@ -45,21 +50,21 @@
 
                             <li class="menu-item lang-menu menu-item-has-children parent">
                                 <a title="English" href="#"><span class="img label-before"><img
-                                            src="assets/images/lang-en.png" alt="lang-en"></span>English<i
+                                            src="assets/images/lang-en.png" alt="lang-en"></span>{{App::getLocale()}}<i
                                         class="fa fa-angle-down" aria-hidden="true"></i></a>
                                 <ul class="submenu lang">
-                                    <li class="menu-item"><a title="hungary" href="#"><span
-                                                class="img label-before"><img src="assets/images/lang-hun.png"
-                                                    alt="lang-hun"></span>Hungary</a></li>
-                                    <li class="menu-item"><a title="german" href="#"><span class="img label-before"><img
-                                                    src="assets/images/lang-ger.png" alt="lang-ger"></span>German</a>
-                                    </li>
-                                    <li class="menu-item"><a title="french" href="#"><span class="img label-before"><img
-                                                    src="assets/images/lang-fra.png" alt="lang-fre"></span>French</a>
-                                    </li>
-                                    <li class="menu-item"><a title="canada" href="#"><span class="img label-before"><img
-                                                    src="assets/images/lang-can.png" alt="lang-can"></span>Canada</a>
-                                    </li>
+
+                                    <ul>
+                                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode =>
+                                        $properties)
+                                        <li>
+                                            <a rel="alternate" hreflang="{{ $localeCode }}"
+                                                href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                                {{ $properties['native'] }}
+                                            </a>
+                                        </li>
+                                        @endforeach
+                                    </ul>
                                 </ul>
                             </li>
                             <li class="menu-item menu-item-has-children parent">
@@ -102,7 +107,7 @@
                                         aria-hidden="true"></i></button>
                                 <div class="wrap-list-cate">
                                     <input type="hidden" name="product-cate" value="0" id="product-cate">
-                                    <a href="#" class="link-control">All Category</a>
+                                    <a href="#" class="link-control">{{__('home.all_cat')}}</a>
                                     <ul class="list-cate">
                                         <li class="level-0">All Category</li>
                                         <li class="level-1">-Electronics</li>
@@ -159,22 +164,7 @@
             </div>
 
             <div class="nav-section header-sticky">
-                <div class="header-nav-section">
-                    <div class="container">
-                        <ul class="nav menu-nav clone-main-menu" id="mercado_haead_menu" data-menuname="Sale Info">
-                            <li class="menu-item"><a href="#" class="link-term">Weekly Featured</a><span
-                                    class="nav-label hot-label">hot</span></li>
-                            <li class="menu-item"><a href="#" class="link-term">Hot Sale items</a><span
-                                    class="nav-label hot-label">hot</span></li>
-                            <li class="menu-item"><a href="#" class="link-term">Top new items</a><span
-                                    class="nav-label hot-label">hot</span></li>
-                            <li class="menu-item"><a href="#" class="link-term">Top Selling</a><span
-                                    class="nav-label hot-label">hot</span></li>
-                            <li class="menu-item"><a href="#" class="link-term">Top rated items</a><span
-                                    class="nav-label hot-label">hot</span></li>
-                        </ul>
-                    </div>
-                </div>
+                <!--  -->
 
                 <div class="primary-nav-section">
                     <div class="container">
@@ -184,19 +174,21 @@
                                         aria-hidden="true"></i></a>
                             </li>
                             <li class="menu-item">
-                                <a href="about-us.html" class="link-term mercado-item-title">About Us</a>
+                                <a href="about-us.html"
+                                    class="link-term mercado-item-title">{{__('header.about_us')}}</a>
                             </li>
                             <li class="menu-item">
-                                <a href="shop.html" class="link-term mercado-item-title">Shop</a>
+                                <a href="shop.html" class="link-term mercado-item-title">{{__('header.shop')}}</a>
                             </li>
                             <li class="menu-item">
-                                <a href="cart.html" class="link-term mercado-item-title">Cart</a>
+                                <a href="cart.html" class="link-term mercado-item-title">{{__('header.cart')}}</a>
                             </li>
                             <li class="menu-item">
                                 <a href="checkout.html" class="link-term mercado-item-title">Checkout</a>
                             </li>
                             <li class="menu-item">
-                                <a href="contact-us.html" class="link-term mercado-item-title">Contact Us</a>
+                                <a href="contact-us.html"
+                                    class="link-term mercado-item-title">{{__('header.connact')}}</a>
                             </li>
                         </ul>
                     </div>

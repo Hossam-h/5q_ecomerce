@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+@if (App::getLocale() == 'en')
+<html lang="en" dir="ltr">
+	@else
+	<html lang="ar" dir="rtl">
+		@endif
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">

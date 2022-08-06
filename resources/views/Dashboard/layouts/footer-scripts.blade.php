@@ -29,3 +29,16 @@
 <script src="{{ URL::asset('assets/dash_assets/assets/js/lobilist.js') }}"></script>
 <!-- custom -->
 <script src="{{ URL::asset('assets/dash_assets/assets/js/custom.js') }}"></script>
+<script src="{{ URL::asset('assets/dash_assets/assets/js/nicescroll/jquery.nicescroll.js') }}"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+
+<script>
+
+$(document).ready(function () {
+    $('#example').DataTable();
+});
+</script>

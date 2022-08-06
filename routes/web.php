@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Category\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,19 +13,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-//add dasboard 
-Route::get('/dash', function () {
-    return view('Dashboard.dashboard');
-});
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ], function(){
 
-//auth dev
-Auth::routes();
+        Route::get('/dashboar_admin', function () {
+            return view('Dashboard.dashboard');
+        });
+        
+        //auth dev
+        Auth::routes();
+        
+        Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+        
+        Route::get('auth/google', [App\Http\Controllers\GoogleController::class, 'redirectToGoogle']);
+        Route::get('auth/google/callback', [App\Http\Controllers\GoogleController::class, 'handleGoogleCallback']);
+        
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+        //Categories
+        Route::group(['namespace' => 'Category'], function () {
+            Route::get('/category',[CategoryController::class,'index']);
 
-Route::get('auth/google', [App\Http\Controllers\GoogleController::class, 'redirectToGoogle']);
-Route::get('auth/google/callback', [App\Http\Controllers\GoogleController::class, 'handleGoogleCallback']);
+    
+    
+        });
+        
+    });
