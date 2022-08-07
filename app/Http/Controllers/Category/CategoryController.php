@@ -6,7 +6,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Interfaces\CategoryInterface;
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests\categoryValidate;
 
 class CategoryController extends Controller
 {
@@ -41,9 +41,9 @@ $this->categories=$category;
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(categoryValidate $request)
     {
-        //
+       return $this->categories->store($request);
     }
 
     /**

@@ -35,10 +35,8 @@ Route::group(
 
         //Categories
         Route::group(['namespace' => 'Category'], function () {
-            Route::get('/category',[CategoryController::class,'index']);
-
-    
-    
+            Route::get('/category',[CategoryController::class,'index'])->name('category.index');
+            Route::POST('/category/store',[CategoryController::class,'store'])->name('store.category');
         });
         
     });
