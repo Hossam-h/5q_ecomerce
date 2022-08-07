@@ -49,22 +49,23 @@ empty
                             <th>Name</th>
                             <th>Name_ar</th>
                             <th>description</th>
-                            <th>description_ar</th>
-                            <th>opertaion</th>
+                            <th>Name</th>
+                            <th>Name_ar</th>
+                            <th>description</th>
+                            
 
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($categories as $category)
+                        @foreach($products as $products)
                         <tr>
-                            <td>{{$category->name}}</td>
-                            <td>{{$category->name_ar}}</td>
-                            <td>{{$category->description}}</td>
-                            <td>{{$category->description_ar}}</td>
-                            <td>
-                                @include('Categories.edit')
-                                @include('Categories.delete')
-                            </td>
+                            <td>{{$products->name}}</td>
+                            <td>{{$products->name_ar}}</td>
+                            <td>{{$products->description}}</td>
+                            <td>{{$products->stock}}</td>
+                            <td>{{$products->price}}</td>
+                            <td>{{$products->description}}</td>
+                            
 
                         </tr>
 

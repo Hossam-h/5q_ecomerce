@@ -2,7 +2,7 @@
 
 namespace App\Interfaces;
 
-interface CategoryInterface{
+interface ProductInterface{
 
 public function index();
 public function store($request);

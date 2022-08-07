@@ -17,8 +17,12 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             'App\Interfaces\CategoryInterface',
            'App\Repository\CategoryRepo',
-           
-  
+      );
+
+       
+      $this->app->bind(
+        'App\Interfaces\ProductInterface',
+       'App\Repository\ProductRepo',
       );
     }
 

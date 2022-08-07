@@ -1,19 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\Category;
-use App\Models\Category;
-use Illuminate\Http\Request;
-use App\Interfaces\CategoryInterface;
+namespace App\Http\Controllers\Product;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\categoryValidate;
+use App\Models\Product;
+use Illuminate\Http\Request;
+use App\Interfaces\ProductInterface;
 
-class CategoryController extends Controller
+class ProductController extends Controller
 {
-    protected $categories;
-    public function __construct(CategoryInterface $category){
- $this->categories=$category;
 
-    }
+    
+protected $product;
+
+public function __construct(ProductInterface $product){
+
+        $this->product=$product;
+}
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +23,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return $this->categories->index();
+        return $this->product->index();
     }
 
     /**
@@ -40,29 +42,29 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(categoryValidate $request)
+    public function store(Request $request)
     {
-       return $this->categories->store($request);
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show(Product $product)
     {
-        
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(Product $product)
     {
         //
     }
@@ -71,22 +73,22 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(categoryValidate $request)
+    public function update(Request $request, Product $product)
     {
-        return $this->categories->update($request);
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(Product $product)
     {
-        return $this->categories->delete($request);
+        //
     }
 }
