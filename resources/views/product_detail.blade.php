@@ -21,62 +21,29 @@
 							<div class="product-gallery">
 							  <ul class="slides">
 
-							    <li data-thumb="assets/images/products/digital_18.jpg">
-							    	<img src="assets/images/products/digital_18.jpg" alt="product thumbnail" />
+							   
+
+							    <li data-thumb="{{asset($product->image)}}" style="list-style:none">
+							    	<img src="{{asset($product->image)}}" alt="product thumbnail" />
 							    </li>
 
-							    <li data-thumb="assets/images/products/digital_17.jpg">
-							    	<img src="assets/images/products/digital_17.jpg" alt="product thumbnail" />
-							    </li>
-
-							    <li data-thumb="assets/images/products/digital_15.jpg">
-							    	<img src="assets/images/products/digital_15.jpg" alt="product thumbnail" />
-							    </li>
-
-							    <li data-thumb="assets/images/products/digital_02.jpg">
-							    	<img src="assets/images/products/digital_02.jpg" alt="product thumbnail" />
-							    </li>
-
-							    <li data-thumb="assets/images/products/digital_08.jpg">
-							    	<img src="assets/images/products/digital_08.jpg" alt="product thumbnail" />
-							    </li>
-
-							    <li data-thumb="assets/images/products/digital_10.jpg">
-							    	<img src="assets/images/products/digital_10.jpg" alt="product thumbnail" />
-							    </li>
-
-							    <li data-thumb="assets/images/products/digital_12.jpg">
-							    	<img src="assets/images/products/digital_12.jpg" alt="product thumbnail" />
-							    </li>
-
-							    <li data-thumb="assets/images/products/digital_14.jpg">
-							    	<img src="assets/images/products/digital_14.jpg" alt="product thumbnail" />
-							    </li>
-
+								
 							  </ul>
 							</div>
 						</div>
 						<div class="detail-info">
 							<div class="product-rating">
+                                <!-- <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i> -->
+                                <!-- <i class="fa fa-star" aria-hidden="true"></i> -->
                                 <a href="#" class="count-review">(05 review)</a>
                             </div>
                             <h2 class="product-name">Radiant-360 R6 Wireless Omnidirectional Speaker [White]</h2>
-                            <div class="short-desc">
-                                <ul>
-                                    <li>7,9-inch LED-backlit, 130Gb</li>
-                                    <li>Dual-core A7 with quad-core graphics</li>
-                                    <li>FaceTime HD Camera 7.0 MP Photos</li>
-                                </ul>
-                            </div>
-                            <div class="wrap-social">
-                            	<a class="link-socail" href="#"><img src="assets/images/social-list.png" alt=""></a>
-                            </div>
-                            <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                            
+                           
+                            <div class="wrap-price"><span class="product-price">${{$product->price}}</span></div>
                             <div class="stock-info in-stock">
                                 <p class="availability">Availability: <b>In Stock</b></p>
                             </div>
@@ -92,7 +59,6 @@
 							<div class="wrap-butons">
 								<a href="#" class="btn add-to-cart">Add to Cart</a>
                                 <div class="wrap-btn">
-                                    <a href="#" class="btn btn-compare">Add Compare</a>
                                     <a href="#" class="btn btn-wishlist">Add Wishlist</a>
                                 </div>
 							</div>
@@ -105,9 +71,9 @@
 							</div>
 							<div class="tab-contents">
 								<div class="tab-content-item active" id="description">
-									<p>Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, a t everti meliore erroribus sea. ro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.</p>
-									<p>Cum altera mandamus in, mea verear disputationi et. Vel regione discere ut, legere expetenda ut eos. In nam nibh invenire similique. Atqui mollis ea his, ius graecis accommodare te. No eam tota nostrum eque. Est cu nibh clita. Sed an nominavi, et stituto, duo id rebum lucilius. Te eam iisque deseruisse, ipsum euismod his at. Eu putent habemus voluptua sit, sit cu rationibus scripserit, modus taria . </p>
-									<p>experian soleat maluisset per. Has eu idque similique, et blandit scriptorem tatibus mea. Vis quaeque ocurreret ea.cu bus  scripserit, modus voluptaria ex per.</p>
+								<p>
+								{{$product->getTranslation('description','en')}}
+								</p>
 								</div>
 								<div class="tab-content-item " id="add_infomation">
 									<table class="shop_attributes">
@@ -133,7 +99,7 @@
 											<ol class="commentlist">
 												<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="li-comment-20">
 													<div id="comment-20" class="comment_container"> 
-														<img alt="" src="assets/images/author-avata.jpg" height="80" width="80">
+														<img alt="" src="{{asset('assets/images/author-avata.jpg')}}" height="80" width="80">
 														<div class="comment-text">
 															<div class="star-rating">
 																<span class="width-80-percent">Rated <strong class="rating">5</strong> out of 5</span>
@@ -162,18 +128,18 @@
 														</p>
 														<div class="comment-form-rating">
 															<span>Your rating</span>
-															<p class="stars">
+															<p class="">
 																
 																<label for="rated-1"></label>
-																<input type="radio" id="rated-1" name="rating" value="1">
+																<input type="radio" id="rated" name="rating" value="1">
 																<label for="rated-2"></label>
-																<input type="radio" id="rated-2" name="rating" value="2">
+																<input type="radio" id="rated" name="rating" value="2">
 																<label for="rated-3"></label>
-																<input type="radio" id="rated-3" name="rating" value="3">
+																<input type="radio" id="rated" name="rating" value="3">
 																<label for="rated-4"></label>
-																<input type="radio" id="rated-4" name="rating" value="4">
+																<input type="radio" id="rated" name="rating" value="4">
 																<label for="rated-5"></label>
-																<input type="radio" id="rated-5" name="rating" value="5" checked="checked">
+																<input type="radio" id="rated" name="rating" value="5" checked="checked">
 															</p>
 														</div>
 														<p class="comment-form-author">
@@ -214,9 +180,8 @@
 									<a class="link-to-service" href="#">
 										<i class="fa fa-truck" aria-hidden="true"></i>
 										<div class="right-content">
-											<b class="title">Free Shipping</b>
-											<span class="subtitle">On Oder Over $99</span>
-											<p class="desc">Lorem Ipsum is simply dummy text of the printing...</p>
+											<b class="title">Fast and high quality delivery</b>
+											<p class="desc">Our company makes delivery all over the country</p>
 										</div>
 									</a>
 								</li>
@@ -225,9 +190,8 @@
 									<a class="link-to-service" href="#">
 										<i class="fa fa-gift" aria-hidden="true"></i>
 										<div class="right-content">
-											<b class="title">Special Offer</b>
-											<span class="subtitle">Get a gift!</span>
-											<p class="desc">Lorem Ipsum is simply dummy text of the printing...</p>
+											<b class="title">Quality assurance and service</b>
+											<p class="desc">We offer only those goods, in which quality we are sure</p>
 										</div>
 									</a>
 								</li>
@@ -237,8 +201,8 @@
 										<i class="fa fa-reply" aria-hidden="true"></i>
 										<div class="right-content">
 											<b class="title">Order Return</b>
-											<span class="subtitle">Return within 7 days</span>
-											<p class="desc">Lorem Ipsum is simply dummy text of the printing...</p>
+											<span class="subtitle">Returns within 30 days</span>
+											<p class="desc">You have 30 days to test your purchase</p>
 										</div>
 									</a>
 								</li>
@@ -251,5 +215,20 @@
 		</div><!--end container-->
 
 	</main>
+
+@endsection
+@section('js')
+<script>
+  var postBoxes = document.querySelectorAll('#rated')
+postBoxes.forEach(function(postBox) {
+
+  postBox.addEventListener('click', function() {
+    //var postId = this.getAttribute('post-id')
+	console.log(1);
+  })
+})
+
+
+</script>
 
 @endsection

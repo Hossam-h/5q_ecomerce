@@ -5,7 +5,7 @@ use App\Models\Category;
 
 class CategoryRepo implements CategoryInterface {
 
-    public $category;
+    protected $category;
     public function __construct(Category $category){
 
         $this->category=$category;

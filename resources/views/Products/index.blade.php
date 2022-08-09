@@ -25,8 +25,13 @@ empty
 @section('content')
 
 <!-- Button trigger modal -->
-@include('Categories.Add')
 
+<a href="/product/create">
+    <button type="button" class="btn btn-primary">
+        Add Product
+    </button>
+
+</a>
 @if ($errors->any())
 <div class="alert alert-danger">
     <ul>
@@ -49,23 +54,34 @@ empty
                             <th>Name</th>
                             <th>Name_ar</th>
                             <th>description</th>
-                            <th>Name</th>
-                            <th>Name_ar</th>
-                            <th>description</th>
-                            
+                            <th>description Ar</th>
+                            <th>price</th>
+                            <th>stock</th>
+                            <th>discount</th>
+                            <th>category</th>
+                            <th>operation</th>
 
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($products as $products)
+                        @foreach($products as $product)
                         <tr>
-                            <td>{{$products->name}}</td>
-                            <td>{{$products->name_ar}}</td>
-                            <td>{{$products->description}}</td>
-                            <td>{{$products->stock}}</td>
-                            <td>{{$products->price}}</td>
-                            <td>{{$products->description}}</td>
-                            
+                            <td>{{$product->name}}</td>
+                            <td>{{$product->name_ar}}</td>
+                            <td>{{$product->getTranslation('description','en')}}</td>
+                            <td>{{$product->getTranslation('description','ar')}}</td>
+                            <td>{{$product->stock}}</td>
+                            <td>{{$product->discount}}</td>
+                            <td>{{$product->price}}</td>
+                            <td>{{$product->category->name}}</td>
+
+                            <td>
+                                <a class="btn btn-primary" href="{{route('product.edit',$product->id)}}">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+
+                                @include('Products.delete')
+                            </td>
 
                         </tr>
 

@@ -38,6 +38,7 @@ Route::group(
         //Categories
         Route::group(['namespace' => 'Category'], function () {
             Route::get('/category',[CategoryController::class,'index'])->name('category.index');
+            
             Route::POST('/category/store',[CategoryController::class,'store'])->name('store.category');
             Route::PUT('/category/update',[CategoryController::class,'update'])->name('update.category');
             Route::delete('/category/delete',[CategoryController::class,'destroy'])->name('delete.category');
@@ -47,9 +48,13 @@ Route::group(
           //Productes
           Route::group(['namespace' => 'Product'], function () {
             Route::get('/product',[ProductController::class,'index'])->name('product.index');
-            Route::POST('/product/store',[ProductController::class,'store'])->name('store.product');
-            Route::PUT('/product/update',[ProductController::class,'update'])->name('update.product');
+            Route::get('/product/create',[ProductController::class,'create'])->name('product.create');
+            Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
+            Route::POST('/product/store',[ProductController::class,'store'])->name('product.store');
+            Route::PUT('/product/update',[ProductController::class,'update'])->name('product.update');
             Route::delete('/product/delete',[ProductController::class,'destroy'])->name('delete.product');
+            Route::get('/product/detail/{id}',[ProductController::class,'detail'])->name('Product.detail');
+
 
         });
         

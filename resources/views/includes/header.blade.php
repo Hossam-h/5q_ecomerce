@@ -50,7 +50,7 @@
 
                             <li class="menu-item lang-menu menu-item-has-children parent">
                                 <a title="English" href="#"><span class="img label-before"><img
-                                            src="assets/images/lang-en.png" alt="lang-en"></span>{{App::getLocale()}}<i
+                                            src="{{asset('assets/images/lang-en.png')}}" alt="lang-en"></span>{{App::getLocale()}}<i
                                         class="fa fa-angle-down" aria-hidden="true"></i></a>
                                 <ul class="submenu lang">
 
@@ -67,7 +67,7 @@
                                     </ul>
                                 </ul>
                             </li>
-                            <li class="menu-item menu-item-has-children parent">
+                            <!-- <li class="menu-item menu-item-has-children parent">
                                 <a title="Dollar (USD)" href="#">Dollar (USD)<i class="fa fa-angle-down"
                                         aria-hidden="true"></i></a>
                                 <ul class="submenu curency">
@@ -85,7 +85,7 @@
                                     </li>
 
                                 </ul>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
                 <div class="mid-section main-info-area">
 
                     <div class="wrap-logo-top left-section">
-                        <a href="index.html" class="link-to-home"><img src="assets/images/logo-top-1.png"
+                        <a href="index.html" class="link-to-home"><img src="{{asset('assets/images/logo-top-1.png')}}"
                                 alt="mercado"></a>
                     </div>
 

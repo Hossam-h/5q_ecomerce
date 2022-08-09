@@ -10,8 +10,9 @@ use App\Http\Requests\categoryValidate;
 class CategoryController extends Controller
 {
     protected $categories;
+    
     public function __construct(CategoryInterface $category){
- $this->categories=$category;
+       $this->categories=$category;
 
     }
     /**

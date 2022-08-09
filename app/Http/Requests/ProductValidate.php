@@ -13,7 +13,7 @@ class ProductValidate extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,16 @@ class ProductValidate extends FormRequest
     public function rules()
     {
         return [
-            //
+            'description'=>'required',
+            'description_ar'=>'required',
+
+            'name'=>'required',
+            'name_ar'=>'required',
+            'price'=>'required|Integer',
+            'units'=>'required|Integer',
+            'category'=>'required|Integer',
+            'photo'=>'required',
+            'discount'=>'required'
         ];
     }
 }

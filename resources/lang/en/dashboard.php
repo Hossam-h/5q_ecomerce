@@ -8,6 +8,7 @@ return[
     'store'=>'Store',
     'Close'=>'Close',
     'item_delete'=>'This item will be deleted',
-    'delete'=>'Delete'
+    'delete'=>'Delete',
+    'product_create'=>'Create Product'
 ]
 ?>

@@ -17,9 +17,11 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('name_ar');
-            $table->string('descrition');
+            $table->text('description');
             $table->string('price');
             $table->Integer('stock');
+            $table->decimal('discount', 13, 4)->nullable();
+            $table->string('image');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();

@@ -38,22 +38,22 @@
 		},
 
     	mercado_product_slider: function(){
-    		if($(".product-gallery").length > 0){
-    			$('.product-gallery').flexslider({
-					animation: "slide",
-					controlNav: "thumbnails"
-				});
+    		// if($(".product-gallery").length > 0){
+    		// 	$('.product-gallery').flexslider({
+			// 		animation: "slide",
+			// 		controlNav: "thumbnails"
+			// 	});
 
-				var config = {
-					margin	: 10,
-					nav 	: true,
-					dots 	: false,
-					loop	: false,
-					navText	: ['<i class="fa fa-angle-left " aria-hidden="true"></i>','<i class="fa fa-angle-right " aria-hidden="true"></i>'],
-				};
-				config.responsive = { 0	:{items:"2"}, 370	:{items:"3"}, 480	:{items:"4"}, 768	:{items:"4"}, 992	:{items:"3"}, 1200:{items:"4"} };
-				$(".flex-control-thumbs").owlCarousel(config);
-    		}
+			// 	var config = {
+			// 		margin	: 10,
+			// 		nav 	: true,
+			// 		dots 	: false,
+			// 		loop	: false,
+			// 		navText	: ['<i class="fa fa-angle-left " aria-hidden="true"></i>','<i class="fa fa-angle-right " aria-hidden="true"></i>'],
+			// 	};
+			// 	config.responsive = { 0	:{items:"2"}, 370	:{items:"3"}, 480	:{items:"4"}, 768	:{items:"4"}, 992	:{items:"3"}, 1200:{items:"4"} };
+			// 	$(".flex-control-thumbs").owlCarousel(config);
+    		// }
     	},
 
 	    mercado_chosen: function(){

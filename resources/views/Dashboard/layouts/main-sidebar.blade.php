@@ -46,6 +46,8 @@
                         <ul id="product" class="collapse" data-parent="#sidebarnav">
                           
                             <li><a href="{{route('product.index')}}">{{__('dashboard.product')}}</a></li>
+                            <li><a href="{{route('product.create')}}">{{__('dashboard.product_create')}}</a></li>
+
                         </ul>
                     </li>
                     <!-- menu item todo-->

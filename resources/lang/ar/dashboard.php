@@ -8,7 +8,8 @@ return[
     'store'=>'حفظ',
     'Close'=>'اغلاق',
     'item_delete'=>'سيتم حذف هذا العنصر',
-'delete'=>'حذف'
+'delete'=>'حذف',
+'product_create'=>'اضافة منتج'
 
 ]
 ?>

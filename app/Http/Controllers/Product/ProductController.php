@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Interfaces\ProductInterface;
+use App\Http\Requests\ProductValidate;
 
 class ProductController extends Controller
 {
@@ -33,7 +34,8 @@ public function __construct(ProductInterface $product){
      */
     public function create()
     {
-        //
+        return $this->product->create();
+
     }
 
     /**
@@ -42,9 +44,9 @@ public function __construct(ProductInterface $product){
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductValidate $request)
     {
-        //
+        return $this->product->store($request);
     }
 
     /**
@@ -64,9 +66,9 @@ public function __construct(ProductInterface $product){
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        //
+        return $this->product->edit($id);
     }
 
     /**
@@ -76,9 +78,10 @@ public function __construct(ProductInterface $product){
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(ProductValidate $request)
     {
-        //
+        return $this->product->update($request);
+
     }
 
     /**
@@ -87,8 +90,11 @@ public function __construct(ProductInterface $product){
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(Request $request)
     {
-        //
+      return $this->product->delete($request);
+    }
+    public function detail($id){
+        return $this->product->detail($id);
     }
 }
