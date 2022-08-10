@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Category\CategoryController;
 use App\Http\Controllers\Product\ProductController;
+use  App\Http\Controllers\Cart\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,6 +57,13 @@ Route::group(
             Route::get('/product/detail/{id}',[ProductController::class,'detail'])->name('Product.detail');
 
 
+        });
+
+        //Cart
+        Route::group(['namespace' => 'Cart'], function () {
+            Route::get('/cart',[CartController::class,'index'])->name('cart.index');
+            Route::delete('/cart/delete/{id}',[CartController::class,'destroy'])->name('cart.destroy');
+            Route::post('/cart/create',[CartController::class,'create'])->name('cart.create');
         });
         
     });

@@ -5,7 +5,7 @@ use App\Interfaces\ProductInterface;
 use App\Models\Category;
 use App\Models\Product;
 use App\Http\Traits\FileUploadTrait;
-
+use Cart;
 class ProductRepo implements ProductInterface{
 
 
@@ -109,7 +109,8 @@ public function delete($request){
 public function detail($id){
     $product=$this->Product::find($id);
 
-    return view('product_detail',compact('product'));
+    $cart = Cart::content();
+    return view('product_detail',compact('product','cart'));
 
 }
 

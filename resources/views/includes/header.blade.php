@@ -95,8 +95,9 @@
                 <div class="mid-section main-info-area">
 
                     <div class="wrap-logo-top left-section">
-                        <a href="index.html" class="link-to-home"><img src="{{asset('assets/images/logo-top-1.png')}}"
-                                alt="mercado"></a>
+                        <a href="{{route('home')}}" class="link-to-home"><img src="{{asset('assets/images/logo-top-1.png')}}"
+                                alt="mercado">
+                            </a>
                     </div>
 
                     <div class="wrap-search center-section">
@@ -146,7 +147,7 @@
                             <a href="#" class="link-direction">
                                 <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                                 <div class="left-info">
-                                    <span class="index">4 items</span>
+                                    <span class="index"> {{Cart::count()}} items</span>
                                     <span class="title">CART</span>
                                 </div>
                             </a>
@@ -181,7 +182,7 @@
                                 <a href="shop.html" class="link-term mercado-item-title">{{__('header.shop')}}</a>
                             </li>
                             <li class="menu-item">
-                                <a href="cart.html" class="link-term mercado-item-title">{{__('header.cart')}}</a>
+                                <a href="{{route('cart.index')}}" class="link-term mercado-item-title">{{__('header.cart')}}</a>
                             </li>
                             <li class="menu-item">
                                 <a href="checkout.html" class="link-term mercado-item-title">Checkout</a>
