@@ -163,7 +163,7 @@
                                 <div class="product product-style-2 equal-elem ">
 
                                     <div class="product-thumnail">
-                                        <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+                                        <a href="{{route('Product.detail',$product->id)}}" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
                                             <figure><img src="{{asset($product->image)}}" width="800" height="800"
                                                     alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
                                             </figure>
@@ -172,12 +172,12 @@
                                             <span class="flash-item sale-label">${{ number_format($product->price, 2) }}</span>
                                         </div>
                                         <div class="wrap-btn">
-                                            <a href="#" class="function-link">quick view</a>
+                                            <a href="{{route('Product.detail',$product->id)}}" class="function-link">quick view</a>
                                         </div>
                                     </div>
                                     
                                     <div class="product-info">
-                                        <a href="#" class="product-name"><span>{{$product->name}}</span></a>
+                                        <a href="{{route('Product.detail',$product->id)}}" class="product-name"><span>{{$product->name}}</span></a>
                                         <div class="wrap-price"><ins>
                                                 <p class="product-price">${{$product->price}}</p>
                                             </ins> <del>
@@ -202,7 +202,7 @@
                                 <div class="product product-style-2 equal-elem ">
 
                                     <div class="product-thumnail">
-                                        <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+                                        <a href="{{route('Product.detail',$product->id)}}" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
                                             <figure><img src="{{asset($pro->image)}}" width="800"
                                                     height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
                                             </figure>
@@ -211,11 +211,11 @@
                                             <span class="flash-item sale-label">sale</span>
                                         </div>
                                         <div class="wrap-btn">
-                                            <a href="#" class="function-link">quick view</a>
+                                            <a href="{{route('Product.detail',$product->id)}}" class="function-link">quick view</a>
                                         </div>
                                     </div>
                                     <div class="product-info">
-                                        <a href="#" class="product-name"><span>{{$pro->name}}</span></a>
+                                        <a href="{{route('Product.detail',$product->id)}}" class="product-name"><span>{{$pro->name}}</span></a>
                                         <div class="wrap-price"><ins>
                                                 <p class="product-price">${{ number_format($product->price, 2) }}</p>
                                             </ins> <del>
