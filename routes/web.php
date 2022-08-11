@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Category\CategoryController;
 use App\Http\Controllers\Product\ProductController;
-use  App\Http\Controllers\Cart\CartController;
-use  App\Http\Controllers\Shop\ShopController;
+use App\Http\Controllers\Cart\CartController;
+use App\Http\Controllers\Shop\ShopController;
+use App\Http\Controllers\Contact\ContactController;
 
 
 /*
@@ -72,6 +73,12 @@ Route::group(
          //Shoping
          Route::group(['namespace' => 'Shop'], function () {
             Route::get('/shoping',[ShopController::class,'index'])->name('shoping.index');
+        });
+
+        
+         //contact
+         Route::group(['namespace' => 'Contact'], function () {
+            Route::get('/Contact',[ContactController::class,'index'])->name('Contact.index');
         });
         
     });

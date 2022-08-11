@@ -10,34 +10,22 @@
         <div class="wrap-main-slide" dir="ltr">
             <div class="slide-carousel owl-carousel style-nav-1" data-items="1" data-loop="1" data-nav="true"
                 data-dots="false">
+               
+                @foreach($products_latest3 as $product)
+
                 <div class="item-slide">
-                    <img src="assets/images/main-slider-1-1.jpg" alt="" class="img-slide">
-                    <div class="slide-info slide-1">
-                        <h2 class="f-title">Kid Smart <b>Watches</b></h2>
-                        <span class="subtitle">Compra todos tus productos Smart por internet.</span>
-                        <p class="sale-info">Only price: <span class="price">$59.99</span></p>
-                        <a href="#" class="btn-link">Shop Now</a>
-                    </div>
-                </div>
-                <div class="item-slide">
-                    <img src="assets/images/main-slider-1-2.jpg" alt="" class="img-slide">
+                    <img src="{{asset($product->image)}}" style="width:1170px; height:500px" alt="" class="img-slide">
                     <div class="slide-info slide-2">
-                        <h2 class="f-title">Extra 25% Off</h2>
+                        <h2 class="f-title">Extra {{$product->discount}}% Off</h2>
                         <span class="f-subtitle">On online payments</span>
                         <p class="discount-code">Use Code: #FA6868</p>
                         <h4 class="s-title">Get Free</h4>
                         <p class="s-subtitle">TRansparent Bra Straps</p>
                     </div>
                 </div>
-                <div class="item-slide">
-                    <img src="assets/images/main-slider-1-3.jpg" alt="" class="img-slide">
-                    <div class="slide-info slide-3">
-                        <h2 class="f-title">Great Range of <b>Exclusive Furniture Packages</b></h2>
-                        <span class="f-subtitle">Exclusive Furniture Packages to Suit every need.</span>
-                        <p class="sale-info">Stating at: <b class="price">$225.00</b></p>
-                        <a href="#" class="btn-link">Shop Now</a>
-                    </div>
-                </div>
+                @endforeach
+
+               
             </div>
         </div>
 
@@ -74,7 +62,7 @@
                             <span class="flash-item sale-label">sale</span>
                         </div>
                         <div class="wrap-btn">
-                            <a href="#" class="function-link">quick view</a>
+                            <a href="{{route('Product.detail',$product->id)}}" class="function-link">quick view</a>
                         </div>
                     </div>
                     <div class="product-info">
@@ -82,7 +70,7 @@
                             <span style=" max-width: 20ch; overflow: hidden; white-space:nowrap">
                                 {{$product->description}}
                             </span> </a>
-                        <div class="wrap-price"><span class="product-price">${{$product->price}}</span></div>
+                        <div class="wrap-price"><span class="product-price">${{ number_format($product->price, 2) }}</span></div>
                     </div>
                 </div>
                 @endforeach
@@ -132,7 +120,7 @@
                                                 {{$product_lst->description}}
                                             </span> </a>
                                         <div class="wrap-price"><span
-                                                class="product-price">${{$product_lst->price}}</span></div>
+                                                class="product-price">${{ number_format($product->price, 2) }}</span></div>
                                     </div>
                                 </div>
                                 @endforeach
@@ -181,12 +169,13 @@
                                             </figure>
                                         </a>
                                         <div class="group-flash">
-                                            <span class="flash-item sale-label">{{$product->price}}</span>
+                                            <span class="flash-item sale-label">${{ number_format($product->price, 2) }}</span>
                                         </div>
                                         <div class="wrap-btn">
                                             <a href="#" class="function-link">quick view</a>
                                         </div>
                                     </div>
+                                    
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>{{$product->name}}</span></a>
                                         <div class="wrap-price"><ins>
@@ -226,10 +215,9 @@
                                         </div>
                                     </div>
                                     <div class="product-info">
-                                        <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional
-                                                Speaker [White]</span></a>
+                                        <a href="#" class="product-name"><span>{{$pro->name}}</span></a>
                                         <div class="wrap-price"><ins>
-                                                <p class="product-price">$168.00</p>
+                                                <p class="product-price">${{ number_format($product->price, 2) }}</p>
                                             </ins> <del>
                                                 <p class="product-price">$250.00</p>
                                             </del></div>

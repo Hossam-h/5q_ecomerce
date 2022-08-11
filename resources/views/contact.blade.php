@@ -38,25 +38,9 @@
 						</div>
 						<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 							<div class="contact-box contact-info">
-								<div class="wrap-map">
-									<div class="mercado-google-maps"
-										 id="az-google-maps57341d9e51968"
-										 data-hue=""
-										 data-lightness="1"
-										 data-map-style="2"
-										 data-saturation="-100"
-										 data-modify-coloring="false"
-										 data-title_maps="Kute themes"
-										 data-phone="088-465 9965 02"
-										 data-email="kutethemes@gmail.com"
-										 data-address="Z115 TP. Thai Nguyen"
-										 data-longitude="-0.120850"
-										 data-latitude="51.508742"
-										 data-pin-icon=""
-										 data-zoom="16"
-										 data-map-type="ROADMAP"
-										 data-map-height="263">
-									</div>
+							<iframe 
+							src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13811.821779251177!2d31.3362435!3d30.0668116!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9f8e0cb0a8c650e7!2s5%20quarters%20dentistry!5e0!3m2!1sen!2seg!4v1660260955781!5m2!1sen!2seg" width="500" height="350" style="border:0;"
+								 allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 								</div>
 								<h2 class="box-title">Contact Detail</h2>
 								<div class="wrap-icon-box">

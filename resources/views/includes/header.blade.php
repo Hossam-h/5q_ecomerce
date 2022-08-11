@@ -134,17 +134,9 @@
                     </div>
 
                     <div class="wrap-icon right-section">
-                        <div class="wrap-icon-section wishlist">
-                            <a href="#" class="link-direction">
-                                <i class="fa fa-heart" aria-hidden="true"></i>
-                                <div class="left-info">
-                                    <span class="index">0 item</span>
-                                    <span class="title">Wishlist</span>
-                                </div>
-                            </a>
-                        </div>
+                        <!-- item in card -->
                         <div class="wrap-icon-section minicart">
-                            <a href="#" class="link-direction">
+                            <a href="{{route('cart.index')}}" class="link-direction">
                                 <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                                 <div class="left-info">
                                     <span class="index"> {{Cart::count()}} items</span>
@@ -188,7 +180,7 @@
                                 <a href="checkout.html" class="link-term mercado-item-title">Checkout</a>
                             </li>
                             <li class="menu-item">
-                                <a href="contact-us.html"
+                                <a href="{{route('Contact.index')}}"
                                     class="link-term mercado-item-title">{{__('header.connact')}}</a>
                             </li>
                         </ul>
