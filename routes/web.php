@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Category\CategoryController;
 use App\Http\Controllers\Product\ProductController;
 use  App\Http\Controllers\Cart\CartController;
+use  App\Http\Controllers\Shop\ShopController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -64,6 +66,12 @@ Route::group(
             Route::get('/cart',[CartController::class,'index'])->name('cart.index');
             Route::delete('/cart/delete/{id}',[CartController::class,'destroy'])->name('cart.destroy');
             Route::post('/cart/create',[CartController::class,'create'])->name('cart.create');
+        });
+
+
+         //Shoping
+         Route::group(['namespace' => 'Shop'], function () {
+            Route::get('/shoping',[ShopController::class,'index'])->name('shoping.index');
         });
         
     });

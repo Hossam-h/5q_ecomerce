@@ -179,7 +179,7 @@
 					</div>
 				</div>
 
-				<div class="wrap-back-link">
+				<!-- <div class="wrap-back-link">
 					<div class="container">
 						<div class="back-link-box">
 							<h3 class="backlink-title">Quick Links</h3>
@@ -227,11 +227,11 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 
 			</div>
 
-			<div class="coppy-right-box">
+			<div class="coppy-right-box" style="margin-top:10px">
 				<div class="container">
 					<div class="coppy-right-item item-left">
 						<p class="coppy-right-text">Copyright © 2020 Surfside Media. All rights reserved</p>

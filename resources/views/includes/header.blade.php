@@ -171,7 +171,7 @@
                     <div class="container">
                         <ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu">
                             <li class="menu-item home-icon">
-                                <a href="index.html" class="link-term mercado-item-title"><i class="fa fa-home"
+                                <a href="{{route('home')}}" class="link-term mercado-item-title"><i class="fa fa-home"
                                         aria-hidden="true"></i></a>
                             </li>
                             <li class="menu-item">
@@ -179,7 +179,7 @@
                                     class="link-term mercado-item-title">{{__('header.about_us')}}</a>
                             </li>
                             <li class="menu-item">
-                                <a href="shop.html" class="link-term mercado-item-title">{{__('header.shop')}}</a>
+                                <a href="{{route('shoping.index')}}" class="link-term mercado-item-title">{{__('header.shop')}}</a>
                             </li>
                             <li class="menu-item">
                                 <a href="{{route('cart.index')}}" class="link-term mercado-item-title">{{__('header.cart')}}</a>

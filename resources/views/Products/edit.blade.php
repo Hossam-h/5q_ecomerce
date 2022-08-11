@@ -99,7 +99,7 @@ empty
                             <div class="form-group">
                                 <label>category</label>
                                 <select class="custom-select mr-sm-2" name="category">
-                                    <option disabled selected> Select Categotry .....</option>
+                                    <option  value="{{$product->category->id}}" selected> {{$product->category->name}} </option>
 
                                     @foreach($categories as $category)
                                     <option value="{{$category->id}}">

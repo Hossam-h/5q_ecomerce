@@ -26,14 +26,11 @@ class ProductValidate extends FormRequest
         return [
             'description'=>'required',
             'description_ar'=>'required',
-
             'name'=>'required',
             'name_ar'=>'required',
             'price'=>'required|Integer',
             'units'=>'required|Integer',
             'category'=>'required|Integer',
-            'photo'=>'required',
-            'discount'=>'required'
         ];
     }
 }

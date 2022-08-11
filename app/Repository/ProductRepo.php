@@ -64,16 +64,20 @@ public function edit($id){
 
 public function update($request){
 
+
+
     $product=$this->Product::find($request->id);
-    
-    if($product->image){
-        unlink($product->image);
-    }
 
     if ($request->hasFile('photo')) {
-
-       
+         $product=$this->Product::find($request->id);  
+        if($product->image){
+            unlink($product->image);
+        }
+        
         $fileName = $this->uploadFile($request->photo, 'uploads/products/');
+        
+   
+
     }
 
     $product->update([
@@ -88,7 +92,7 @@ public function update($request){
             'stock'=>$request->units,
             'discount'=>$request->discount,
             'category_id'=>$request->category,
-            'image'=>isset($fileName) ? 'uploads/products/' . $fileName : null,
+            'image'=>isset($fileName) ? 'uploads/products/' . $fileName : $product->image,
         ]);
 
         return redirect()->route('product.index');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Category;
 use Cart;
 
 class HomeController extends Controller
@@ -28,6 +29,11 @@ class HomeController extends Controller
 
       //  dd(Cart::content());
         $products=Product::all();
-        return view('welcome',compact('products'));
+        $products_latest=Product::latest()->take(6)->get();
+        $OnCat_Fst=Category::with('products')->first();
+
+       $Category_Fst=Category::with('products')->latest()->take(2)->get();
+
+        return view('welcome',compact('products','products_latest','Category_Fst','OnCat_Fst'));
     }
 }
