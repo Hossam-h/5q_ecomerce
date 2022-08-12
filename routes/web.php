@@ -6,7 +6,7 @@ use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\Cart\CartController;
 use App\Http\Controllers\Shop\ShopController;
 use App\Http\Controllers\Contact\ContactController;
-
+use App\Http\Controllers\Review\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,6 +79,11 @@ Route::group(
          //contact
          Route::group(['namespace' => 'Contact'], function () {
             Route::get('/Contact',[ContactController::class,'index'])->name('Contact.index');
+        });
+
+         //reviews
+         Route::group(['namespace' => 'Review'], function () {
+            Route::post('/review',[ReviewController::class,'create'])->name('review.create');
         });
         
     });

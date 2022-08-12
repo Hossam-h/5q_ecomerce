@@ -4,6 +4,8 @@ namespace App\Repository;
 use App\Interfaces\ProductInterface;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Review;
+
 use App\Http\Traits\FileUploadTrait;
 use Cart;
 class ProductRepo implements ProductInterface{
@@ -111,10 +113,12 @@ public function delete($request){
 
 
 public function detail($id){
-    $product=$this->Product::find($id);
 
+    $product=$this->Product::find($id);
     $cart = Cart::content();
-    return view('product_detail',compact('product','cart'));
+    $Reviews=$product->reviews->take(5);
+   // dd($Reviews);
+    return view('product_detail',compact('product','cart','Reviews'));
 
 }
 

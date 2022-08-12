@@ -47,14 +47,14 @@
                         <div class="stock-info in-stock">
                             <p class="availability">Availability: <b>In Stock</b></p>
                         </div>
-						@if($cart->where('id',$product->id)->count())
+                        @if($cart->where('id',$product->id)->count())
 
-						<div>
-							<span class="btn btn-primary" >
-							This item already item in card
-							</span>
-						</div>
-						@else
+                        <div>
+                            <span class="btn btn-primary">
+                                This item already item in card
+                            </span>
+                        </div>
+                        @else
 
                         <form action="{{route('cart.create')}}" method="post">
 
@@ -73,11 +73,11 @@
                                 <input type="hidden" name="id" value="{{$product->id}}">
                                 <input type="hidden" name="name" value="{{$product->name}}">
                                 <input type="hidden" name="price" value="{{$product->price}}">
-								
+
                                 <button type="submit" class="btn add-to-cart">Add to Cart</button>
                         </form>
 
-						@endif
+                        @endif
                         <div class="wrap-btn">
                             <a href="#" class="btn btn-wishlist">Add Wishlist</a>
                         </div>
@@ -123,29 +123,44 @@
                                     <h2 class="woocommerce-Reviews-title">01 review for <span>Radiant-360 R6 Chainsaw
                                             Omnidirectional [Orage]</span></h2>
                                     <ol class="commentlist">
+                                        @foreach($Reviews as $review)
                                         <li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1"
                                             id="li-comment-20">
+
                                             <div id="comment-20" class="comment_container">
-                                                <img alt="" src="{{asset('assets/images/author-avata.jpg')}}"
-                                                    height="80" width="80">
                                                 <div class="comment-text">
-                                                    <div class="star-rating">
-                                                        <span class="width-80-percent">Rated <strong
-                                                                class="rating">5</strong> out of 5</span>
+                                                    <div class="">
+                                                <div>
+                                                @if( $review->rating == 1)
+                                                <img src="{{asset('uploads/stars/1.jpg')}}" alt="" srcset=""> <br>
+                                                @elseif( $review->rating == 2)
+                                                <img src="{{asset('uploads/stars/2.jpg')}}" alt="" srcset=""> <br>
+                                                @elseif( $review->rating ==3)
+                                                <img src="{{asset('uploads/stars/3.jpg')}}" alt="" srcset=""> <br>
+                                                @elseif( $review->rating == 4)
+                                                <img src="{{asset('uploads/stars/4.jpg')}}" alt="" srcset=""> <br>
+                                                @else
+                                                <img src="{{asset('uploads/stars/5.jpg')}}" alt="" srcset=""> <br>
+
+                                                @endif
+
+                                                </div>
+                                                    
                                                     </div>
                                                     <p class="meta">
-                                                        <strong class="woocommerce-review__author">admin</strong>
+                                                        <strong
+                                                            class="woocommerce-review__author">{{$review->user->name}}</strong>
                                                         <span class="woocommerce-review__dash">–</span>
                                                         <time class="woocommerce-review__published-date"
-                                                            datetime="2008-02-14 20:00">Tue, Aug 15, 2017</time>
+                                                            datetime="2008-02-14 20:00">{{date('d-m-Y', strtotime($review->created_at));}}</time>
                                                     </p>
                                                     <div class="description">
-                                                        <p>Pellentesque habitant morbi tristique senectus et netus et
-                                                            malesuada fames ac turpis egestas.</p>
+                                                        <p>{{$review->comment}}</p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </li>
+                                        @endforeach
                                     </ol>
                                 </div><!-- #comments -->
 
@@ -153,43 +168,39 @@
                                     <div id="review_form">
                                         <div id="respond" class="comment-respond">
 
-                                            <form action="#" method="post" id="commentform" class="comment-form"
-                                                novalidate="">
-                                                <p class="comment-notes">
-                                                    <span id="email-notes">Your email address will not be
-                                                        published.</span> Required fields are marked <span
-                                                        class="required">*</span>
-                                                </p>
+                                            <form action="{{route('review.create')}}" method="post" id="commentform"
+                                                class="comment-form" novalidate="">
+                                                @csrf
+                                                <input type="hidden" name="product_id" value="{{$product->id}}">
+
                                                 <div class="comment-form-rating">
+
+
                                                     <span>Your rating</span>
-                                                    <p class="">
+                                                    <p class="stars">
+                                                        <input type="hidden" name="fi_rate" id="finale_rate" required>
 
                                                         <label for="rated-1"></label>
-                                                        <input type="radio" id="rated" name="rating" value="1">
+                                                        <input type="radio" id="rated-1" name="rating" value="1">
                                                         <label for="rated-2"></label>
-                                                        <input type="radio" id="rated" name="rating" value="2">
+                                                        <input type="radio" id="rated-2" name="rating" value="2">
                                                         <label for="rated-3"></label>
-                                                        <input type="radio" id="rated" name="rating" value="3">
+                                                        <input type="radio" id="rated-3" name="rating" value="3">
                                                         <label for="rated-4"></label>
-                                                        <input type="radio" id="rated" name="rating" value="4">
+                                                        <input type="radio" id="rated-4" name="rating" value="4">
                                                         <label for="rated-5"></label>
-                                                        <input type="radio" id="rated" name="rating" value="5"
+                                                        <input type="radio" id="rated-5" name="rating" value="5"
                                                             checked="checked">
+
                                                     </p>
                                                 </div>
-                                                <p class="comment-form-author">
-                                                    <label for="author">Name <span class="required">*</span></label>
-                                                    <input id="author" name="author" type="text" value="">
-                                                </p>
-                                                <p class="comment-form-email">
-                                                    <label for="email">Email <span class="required">*</span></label>
-                                                    <input id="email" name="email" type="email" value="">
-                                                </p>
+
                                                 <p class="comment-form-comment">
                                                     <label for="comment">Your review <span class="required">*</span>
                                                     </label>
                                                     <textarea id="comment" name="comment" cols="45" rows="8"></textarea>
                                                 </p>
+
                                                 <p class="form-submit">
                                                     <input name="submit" type="submit" id="submit" class="submit"
                                                         value="Submit">
@@ -259,13 +270,26 @@
 @endsection
 @section('js')
 <script>
-var postBoxes = document.querySelectorAll('#rated')
-postBoxes.forEach(function(postBox) {
+// var postBoxes = document.querySelectorAll('#rated')
+// postBoxes.forEach(function(postBox) {
 
-    postBox.addEventListener('click', function() {
-        //var postId = this.getAttribute('post-id')
-        console.log(1);
+//     postBox.addEventListener('click', function() {
+//         //var postId = this.getAttribute('post-id')
+//         console.log(1);
+//     })
+// })
+
+
+var postBoxes = document.getElementsByName('rating')
+postBoxes.forEach(ele => {
+    let i = 1;
+    ele.addEventListener('click', function() {
+        i = this.value
+        document.getElementById('finale_rate').value = i
+
+        console.log(document.getElementById('finale_rate').value)
     })
+
 })
 </script>
 

@@ -335,16 +335,8 @@ this.removeEventInstancesForDef(t))},t.prototype.getEventInstances=function(){va
           that.css('width', this.opt.width);
         }
 
-        if (this.opt.readOnly) {
-          methods._lock.call(this);
-        } else {
-          that.css('cursor', 'pointer');
-          methods._binds.call(this);
-        }
-
-        methods._target.call(this, this.opt.score);
-
-        that.data({ 'settings': this.opt, 'raty': true });
+        
+      
       });
     }, _adjustPrecision: function() {
       this.opt.targetType = 'score';
