@@ -86,7 +86,6 @@
                 <div class="advance-info">
                     <div class="tab-control normal">
                         <a href="#description" class="tab-control-item active">description</a>
-                        <a href="#add_infomation" class="tab-control-item">Addtional Infomation</a>
                         <a href="#review" class="tab-control-item">Reviews</a>
                     </div>
                     <div class="tab-contents">
@@ -95,33 +94,13 @@
                                 {{$product->getTranslation('description','en')}}
                             </p>
                         </div>
-                        <div class="tab-content-item " id="add_infomation">
-                            <table class="shop_attributes">
-                                <tbody>
-                                    <tr>
-                                        <th>Weight</th>
-                                        <td class="product_weight">1 kg</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Dimensions</th>
-                                        <td class="product_dimensions">12 x 15 x 23 cm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Color</th>
-                                        <td>
-                                            <p>Black, Blue, Grey, Violet, Yellow</p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        
                         <div class="tab-content-item " id="review">
 
                             <div class="wrap-review-form">
 
                                 <div id="comments">
-                                    <h2 class="woocommerce-Reviews-title">01 review for <span>Radiant-360 R6 Chainsaw
-                                            Omnidirectional [Orage]</span></h2>
+                                    <h2 class="woocommerce-Reviews-title">Reviewes for <span>{{$product->name}} </span></h2>
                                     <ol class="commentlist">
                                         @foreach($Reviews as $review)
                                         <li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1"

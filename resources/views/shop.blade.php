@@ -136,7 +136,7 @@
                                         </a>
                                     </div>
                                     <div class="product-info">
-                                        <a href="#" class="product-name"><span>{{$product->name}}</span></a>
+                                        <a href="{{route('Product.detail',$product->id)}}" class="product-name"><span>{{$product->name}}</span></a>
                                         <div class="wrap-price"><span class="product-price">{{$product->price}}</span>
                                         </div>
                                     </div>

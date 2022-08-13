@@ -14,8 +14,8 @@
                     <div class="topbar-menu left-menu">
                         <ul>
                             <li class="menu-item">
-                                <a title="Hotline: (+123) 456 789" href="#"><span
-                                        class="icon label-before fa fa-mobile"></span>Hotline: (+123) 456 789</a>
+                                <a title="Hotline: (+123) 456 789" href="javascript:void(0);"><span
+                                        class="icon label-before fa fa-mobile"></span>Hotline: 01060473720</a>
                             </li>
                         </ul>
                     </div>
@@ -174,7 +174,7 @@
                                 <a href="{{route('shoping.index')}}" class="link-term mercado-item-title">{{__('header.shop')}}</a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{route('cart.index')}}" class="link-term mercado-item-title">{{__('header.cart')}}</a>
+                                <a href="{{route('cart.index')}}" class="link-term mercado-item-title">{{__('CART')}}</a>
                             </li>
                             <li class="menu-item">
                                 <a href="checkout.html" class="link-term mercado-item-title">Checkout</a>

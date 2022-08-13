@@ -23,14 +23,12 @@ class CartController extends Controller
         foreach($carts as $cart){
             $allQty +=$cart->qty * $cart->price;
          
-
-
         }
 
         $allQty;
 
-      // dd(Product::whereIn('id',$ids)->get());
-        return view('cart',compact('carts','allQty'));
+        $products=Product::take(10)->get();
+        return view('cart',compact('carts','allQty','products'));
     }
 
     /**
