@@ -1,5 +1,9 @@
 @extends('includes.main')
 
+@section('css')
+
+@endsection
+
 @section('content')
 
 
@@ -246,5 +250,11 @@
     </div>
 
 </main>
+
+@endsection
+
+
+@section('js')
+
 
 @endsection
