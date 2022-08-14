@@ -5,6 +5,7 @@
     <div class="mercado-panels"></div>
 </div>
 
+
 <!--header-->
 <header id="header" class="header header-style-1">
     <div class="container-fluid">
@@ -36,7 +37,7 @@
                             <li class="menu-item">
 
                                 <a class="dropdown-item" href="http://127.0.0.1:8000/logout" onclick="event.preventDefault();
-				   document.getElementById('logout-form').submit();">
+				                 document.getElementById('logout-form').submit();">
                                     {{__('login.logout')}}
                                 </a>
 
@@ -50,8 +51,9 @@
 
                             <li class="menu-item lang-menu menu-item-has-children parent">
                                 <a title="English" href="#"><span class="img label-before"><img
-                                            src="{{asset('assets/images/lang-en.png')}}" alt="lang-en"></span>{{App::getLocale()}}<i
-                                        class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                            src="{{asset('assets/images/lang-en.png')}}"
+                                            alt="lang-en"></span>{{App::getLocale()}}<i class="fa fa-angle-down"
+                                        aria-hidden="true"></i></a>
                                 <ul class="submenu lang">
 
                                     <ul>
@@ -95,40 +97,23 @@
                 <div class="mid-section main-info-area">
 
                     <div class="wrap-logo-top left-section">
-                        <a href="{{route('home')}}" class="link-to-home"><img src="{{asset('assets/images/logo-top-1.png')}}"
-                                alt="mercado">
-                            </a>
+                        <a href="{{route('home')}}" class="link-to-home"><img
+                                src="{{asset('assets/images/logo-top-1.png')}}" alt="mercado">
+                        </a>
                     </div>
 
                     <div class="wrap-search center-section">
                         <div class="wrap-search-form">
-                            <form action="{{route('shoping.search')}}" id="form-search-top" >
+                            <form action="{{route('shoping.search')}}" id="form-search-top">
                                 <input type="text" name="search" value="" placeholder="Search here...">
                                 <button form="form-search-top" type="submit"><i class="fa fa-search"
                                         aria-hidden="true"></i></button>
-                                <!-- <div class="wrap-list-cate">
-                                    <input type="hidden" name="product-cate" value="0" id="product-cate"> -->
-                                    <!-- <a href="#" class="link-control">{{__('home.all_cat')}}</a> -->
-                                    <!-- <ul class="list-cate">
-                                        <li class="level-0">All Category</li>
-                                        <li class="level-1">-Electronics</li>
-                                        <li class="level-2">Batteries & Chargens</li>
-                                        <li class="level-2">Headphone & Headsets</li>
-                                        <li class="level-2">Mp3 Player & Acessories</li>
-                                        <li class="level-1">-Smartphone & Table</li>
-                                        <li class="level-2">Batteries & Chargens</li>
-                                        <li class="level-2">Mp3 Player & Headphones</li>
-                                        <li class="level-2">Table & Accessories</li>
-                                        <li class="level-1">-Electronics</li>
-                                        <li class="level-2">Batteries & Chargens</li>
-                                        <li class="level-2">Headphone & Headsets</li>
-                                        <li class="level-2">Mp3 Player & Acessories</li>
-                                        <li class="level-1">-Smartphone & Table</li>
-                                        <li class="level-2">Batteries & Chargens</li>
-                                        <li class="level-2">Mp3 Player & Headphones</li>
-                                        <li class="level-2">Table & Accessories</li>
-                                    </ul>                                
-                                </div> -->
+                                <div class="wrap-list-cate" style="width:100%" >
+                                    <ul class="list-cate"  name="select_product">
+                                       
+                                    </ul>
+                                   
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -171,10 +156,12 @@
                                     class="link-term mercado-item-title">{{__('header.about_us')}}</a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{route('shoping.index')}}" class="link-term mercado-item-title">{{__('header.shop')}}</a>
+                                <a href="{{route('shoping.index')}}"
+                                    class="link-term mercado-item-title">{{__('header.shop')}}</a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{route('cart.index')}}" class="link-term mercado-item-title">{{__('CART')}}</a>
+                                <a href="{{route('cart.index')}}"
+                                    class="link-term mercado-item-title">{{__('CART')}}</a>
                             </li>
                             <li class="menu-item">
                                 <a href="checkout.html" class="link-term mercado-item-title">Checkout</a>

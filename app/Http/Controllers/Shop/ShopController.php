@@ -70,13 +70,21 @@ class ShopController extends Controller
 
     public function search(Request $request)
     {
-       // dd($request->all());
-        
         $products= Product::where('name','like','%' .$request->search. '%')->paginate(9);
        
         $categories = Category::with('products')->get();
         $product_latest = Product::latest()->take(7)->get();
         return view('shop_search',compact('categories','products','product_latest'));
+    }
+
+    public function search_live(Request $request)
+    {
+          $data=  $request->get('product');
+                  
+         $products= Product::where('name','like',$data. '%')->get();
+         return $products;
+
+       
         
     }
 

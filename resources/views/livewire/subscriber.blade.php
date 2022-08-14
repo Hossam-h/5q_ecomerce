@@ -8,7 +8,17 @@
                 <button class="btn-submit">Subscribe</button>
             </form>
 
-
+            @if(Session::has('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+            @endif
+            @if(Session::has('error_exist'))
+            <div class="alert alert-danger">
+                {{ session('error_exist') }}
+            </div>
+            @endif
+            
             @if(Session::has('message'))
             <div class="alert alert-success">
                 {{ session('message') }}
