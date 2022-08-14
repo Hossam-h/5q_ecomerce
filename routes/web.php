@@ -73,9 +73,14 @@ Route::group(
          //Shoping
          Route::group(['namespace' => 'Shop'], function () {
             Route::get('/shoping',[ShopController::class,'index'])->name('shoping.index');
+            Route::get('/search',[ShopController::class,'search'])->name('shoping.search');
+
         });
 
-        
+
+       
+
+
          //contact
          Route::group(['namespace' => 'Contact'], function () {
             Route::get('/Contact',[ContactController::class,'index'])->name('Contact.index');
